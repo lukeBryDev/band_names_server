@@ -29,6 +29,10 @@
             console.log('Escuchando:', payload);
         });
 
+        socket.on('emitir-mensaje', (payload) => {
+            console.log('emitir-mensaje:', payload);
+        });
+
     </script>
 </body>
 
