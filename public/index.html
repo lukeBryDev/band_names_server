@@ -33,6 +33,11 @@
             console.log('emitir-mensaje:', payload);
         });
 
+        socket.on('active-bands', (payload) => {
+            console.clear();
+            console.table('active-bands:', payload);
+        });
+
     </script>
 </body>
 
