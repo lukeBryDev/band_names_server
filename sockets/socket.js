@@ -37,4 +37,9 @@ io.on('connection', client => {
         client.broadcast.emit('emitir-mensaje', payload); // emite a todos menos el que lo emitio
     });
 
+    client.on('vote-band', (payload) => {
+        bands.voteBand(payload.id);
+        io.emit('active-bands', bands.getBands()); // emite a todos
+    });
+
 });
