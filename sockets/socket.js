@@ -42,4 +42,10 @@ io.on('connection', client => {
         io.emit('active-bands', bands.getBands()); // emite a todos
     });
 
+    client.on('add-band', (payload) => {
+        const band = new Band(payload.name);
+        bands.addBand(band);
+        io.emit('active-bands', bands.getBands()); // emite a todos
+    });
+
 });
