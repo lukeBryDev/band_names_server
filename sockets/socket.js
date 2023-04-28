@@ -48,4 +48,9 @@ io.on('connection', client => {
         io.emit('active-bands', bands.getBands()); // emite a todos
     });
 
+    client.on('delete-band', (payload) => {
+        bands.deleteBand(payload.id);
+        io.emit('active-bands', bands.getBands()); // emite a todos
+    });
+
 });
